@@ -300,7 +300,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="/resume.pdf">
+              <Link href="https://drive.google.com/file/d/165tmz6uiVHXBZmFwMJ8k6_aX4aUWDXi5/view?usp=drive_link">
                 <Button size="lg" variant="outline">
                   Download Resume
                 </Button>
