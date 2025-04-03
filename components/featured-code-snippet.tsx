@@ -21,41 +21,49 @@ export function FeaturedCodeSnippet() {
 
   return (
     <motion.div
-      className="code-snippet"
+      className="w-full max-w-3xl mx-auto p-4 bg-card rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className="code-snippet-header">
-        <div className="code-snippet-dots">
-          <div className="code-snippet-dot code-snippet-dot-red"></div>
-          <div className="code-snippet-dot code-snippet-dot-yellow"></div>
-          <div className="code-snippet-dot code-snippet-dot-green"></div>
+      {/* Header */}
+      <div className="flex justify-between items-center px-4 py-2 bg-muted/30 rounded-t-lg">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <div className="code-snippet-language">{snippet.language}</div>
+        <span className="text-sm font-medium">{snippet.language}</span>
       </div>
-      <div className="code-snippet-content bg-muted/30">
+
+      {/* Code Content */}
+      <div className="relative bg-muted/30 p-4 rounded-b-lg overflow-hidden">
+        {/* Copy Button */}
         <motion.button
-          className="code-snippet-copy"
+          className="absolute top-2 right-2 p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-all"
           onClick={handleCopy}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
         </motion.button>
-        <div className="code-snippet-line-numbers">
-          {lines.map((_, i) => (
-            <span key={i} className="code-snippet-line-number">
-              {i + 1}
-            </span>
-          ))}
+
+        {/* Code Content with Line Numbers */}
+        <div className="flex">
+          {/* Line Numbers */}
+          <div className="pr-4 text-gray-400 text-sm select-none">
+            {lines.map((_, i) => (
+              <div key={i}>{i + 1}</div>
+            ))}
+          </div>
+
+          {/* Code Block */}
+          <pre className="text-sm whitespace-pre-wrap overflow-x-auto max-w-full">
+            <code className="font-mono">{snippet.code}</code>
+          </pre>
         </div>
-        <pre>
-          <code className="code-snippet-code">{snippet.code}</code>
-        </pre>
       </div>
     </motion.div>
   )
 }
-

@@ -17,7 +17,7 @@ export const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Redux Toolkit", "WebSockets", "Tailwind CSS"],
     demoUrl: "https://chiragnexus.netlify.app/",
     githubUrl: "https://github.com/chiragSahani/Nexus.git",
-    image: "https://res.cloudinary.com/dlyctssmy/image/upload/v1743665307/imagesCrypto_lpkxqk.jpg",
+    image: "https://res.cloudinary.com/dlyctssmy/image/upload/v1743684513/cr1_wlvyul.svg",
   },
   
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     techStack: ["React", "Tailwind", "TypeScript"],
     demoUrl: "https://chirag9528.netlify.app/",
     githubUrl: "https://github.com/chiragSahani/ScreenRecorder.git",
-    image: "https://res.cloudinary.com/dlyctssmy/image/upload/v1736661485/Screenshot_7_lzqt4e.png",
+    image: "https://res.cloudinary.com/dlyctssmy/image/upload/v1743684670/screen_xx45sc.jpg",
   },
   {
     title: "MedBook",

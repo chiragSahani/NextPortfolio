@@ -143,7 +143,7 @@ export default function Home() {
                   variants={item}
                 >
                   <h3 className="font-medium text-lg mb-2">Experience</h3>
-                  <p className="text-muted-foreground">2+ Years</p>
+                  <p className="text-muted-foreground">Fresher</p>
                 </motion.div>
                 <motion.div
                   className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
@@ -193,48 +193,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Code Snippet */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="flex flex-col items-center justify-center space-y-4 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Code Snippets</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explore some of my code solutions and implementations
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            className="mx-auto mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <FeaturedCodeSnippet />
-          </motion.div>
-          <motion.div
-            className="flex justify-center mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Link href="/snippets">
-              <Button variant="outline" className="group">
-                View More Snippets
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+   {/* Featured Code Snippet */}
+<section className="w-full py-10 sm:py-12 md:py-24 lg:py-32 bg-muted/50">
+  <div className="container px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="flex flex-col items-center justify-center space-y-4 text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <div className="space-y-2">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
+          Code Snippets
+        </h2>
+        <p className="max-w-[90%] sm:max-w-[600px] md:max-w-[750px] lg:max-w-[900px] text-muted-foreground text-sm sm:text-base md:text-lg xl:text-xl">
+          Explore some of my code solutions and implementations
+        </p>
+      </div>
+    </motion.div>
+    
+    <motion.div
+      className="w-full max-w-3xl mx-auto mt-6 sm:mt-8 md:mt-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      viewport={{ once: true }}
+    >
+      <FeaturedCodeSnippet />
+    </motion.div>
+
+    <motion.div
+      className="flex justify-center mt-6 sm:mt-8 md:mt-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      <Link href="/snippets">
+        <Button variant="outline" className="group">
+          View More Snippets
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Button>
+      </Link>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Featured Technologies */}
       <section className="w-full py-12 md:py-24 lg:py-32">
