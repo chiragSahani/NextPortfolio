@@ -65,7 +65,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="https://drive.google.com/file/d/165tmz6uiVHXBZmFwMJ8k6_aX4aUWDXi5/view?usp=drive_link" className="hidden md:inline-flex">
+          <Link href="https://drive.google.com/file/d/1AiRFCqC6th0dHAfpHcQjfz5McPQDak2v/view?usp=drive_link" className="hidden md:inline-flex">
             <Button variant="outline" size="sm" className="group">
               Resume
               <motion.span
