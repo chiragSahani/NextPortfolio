@@ -73,7 +73,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+    {/* About Me Section with Profile Picture */}
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
         <div className="container px-4 md:px-6">
           <motion.div
             className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center"
@@ -115,45 +116,50 @@ export default function Home() {
                 competitive coding and full-stack application development.
               </motion.p>
             </div>
-            <div className="space-y-4">
-              <motion.div
-                className="grid grid-cols-2 gap-4"
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-              >
-                <motion.div
-                  className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                  variants={item}
-                >
-                  <h3 className="font-medium text-lg mb-2">Location</h3>
-                  <p className="text-muted-foreground">Haldwani, Uttarakhand</p>
-                </motion.div>
-                <motion.div
-                  className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                  variants={item}
-                >
-                  <h3 className="font-medium text-lg mb-2">Education</h3>
-                  <p className="text-muted-foreground">B.Tech in Computer Science</p>
-                  <p className="text-sm text-muted-foreground">CGC, Mohali</p>
-                </motion.div>
-                <motion.div
-                  className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                  variants={item}
-                >
-                  <h3 className="font-medium text-lg mb-2">Experience</h3>
-                  <p className="text-muted-foreground">Fresher</p>
-                </motion.div>
-                <motion.div
-                  className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                  variants={item}
-                >
-                  <h3 className="font-medium text-lg mb-2">DSA Problems</h3>
-                  <p className="text-muted-foreground">1300+ Solved</p>
-                </motion.div>
-              </motion.div>
-            </div>
+
+            {/* Profile Picture Card */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative w-[220px] h-[220px] md:w-[250px] md:h-[250px] rounded-full overflow-hidden drop-shadow-xl border-4 border-background bg-background/70">
+                <img
+                  src="https://res.cloudinary.com/dlyctssmy/image/upload/v1734845393/android-chrome-512x512_oh3h9a.png"
+                  alt="Chirag Sahani Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Additional Info Cards */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10"
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <motion.div className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" variants={item}>
+              <h3 className="font-medium text-lg mb-2">Location</h3>
+              <p className="text-muted-foreground">Haldwani, Uttarakhand</p>
+            </motion.div>
+            <motion.div className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" variants={item}>
+              <h3 className="font-medium text-lg mb-2">Education</h3>
+              <p className="text-muted-foreground">B.Tech in Computer Science</p>
+              <p className="text-sm text-muted-foreground">CGC, Mohali</p>
+            </motion.div>
+            <motion.div className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" variants={item}>
+              <h3 className="font-medium text-lg mb-2">Experience</h3>
+              <p className="text-muted-foreground">Fresher</p>
+            </motion.div>
+            <motion.div className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" variants={item}>
+              <h3 className="font-medium text-lg mb-2">DSA Problems</h3>
+              <p className="text-muted-foreground">1300+ Solved</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -239,6 +245,7 @@ export default function Home() {
     </motion.div>
   </div>
 </section>
+
 
 
       {/* Featured Technologies */}
