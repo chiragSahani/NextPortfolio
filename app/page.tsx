@@ -100,9 +100,9 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Motivated Software Developer skilled in Java, Python, JavaScript, and C++, with expertise in backend
-                development, API design, and cloud computing. Experienced in building scalable, high-performance
-                applications using Node.js, Express.js, Flask, and PostgreSQL.
+                Motivated Software Developer skilled in Java, Python, JavaScript, and C++, with a strong foundation in backend development, RESTful API design, and database management. 
+                Experienced in building scalable and high-performance applications using Node.js, Express.js, Flask, and MongoDB/PostgreSQL.
+                Proficient in version control (Git/GitHub), containerization (Docker), and CI/CD pipelines using GitHub Actions.
               </motion.p>
               <motion.p
                 className="text-lg text-muted-foreground"
@@ -111,9 +111,10 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Proficient in DevOps practices, CI/CD pipelines, and containerization (Docker, Azure, GitHub Actions).
-                Passionate about problem-solving, data structures, and system design, with a strong track record in
-                competitive coding and full-stack application development.
+              Passionate about problem-solving, data structures, algorithms, and system design, with a proven track record in competitive coding and full-stack application development. 
+              Known for quickly adapting to new technologies and delivering robust, efficient code in collaborative environments.
+
+
               </motion.p>
             </div>
 
