@@ -5,7 +5,6 @@ try {
   // ignore error
 }
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -20,6 +19,35 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/projects",
+        destination: "/#projects",
+        permanent: true,
+      },
+      {
+        source: "/experience",
+        destination: "/#experience",
+        permanent: true,
+      },
+      {
+        source: "/contact",
+        destination: "/#contact",
+        permanent: true,
+      },
+      {
+        source: "/snippets",
+        destination: "/#projects",
+        permanent: true,
+      },
+      {
+        source: "/technologies",
+        destination: "/#skills",
+        permanent: true,
+      },
+    ]
   },
 }
 

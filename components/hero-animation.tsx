@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
-export function HeroAnimation() {
+export default function HeroAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
