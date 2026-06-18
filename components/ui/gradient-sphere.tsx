@@ -89,6 +89,8 @@ mat3 rotX(float a) {
 
 void main() {
   vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution) / uResolution.y;
+  // zoom out so the sphere floats with margin instead of filling the frame
+  uv *= 2.0;
 
   vec3 ro = vec3(0.0, 0.0, 2.7);
   vec3 rd = normalize(vec3(uv, -1.7));
@@ -140,6 +142,26 @@ void main() {
 
   // gentle ambient occlusion toward the bottom
   col *= mix(0.82, 1.06, smoothstep(-1.0, 1.0, n.y));
+
+  // ===== network-globe overlay: rotating meridians + glowing nodes =====
+  vec3 q = normalize(sp);
+  float lat = asin(clamp(q.y, -1.0, 1.0));
+  float lon = atan(q.z, q.x);
+  const float NLAT = 7.0;
+  const float NLON = 14.0;
+  float fLat = fract(lat / 3.14159265 * NLAT + 0.5);
+  float fLon = fract(lon / 6.28318530 * NLON + 0.5);
+  float dLat = min(fLat, 1.0 - fLat);
+  float dLon = min(fLon, 1.0 - fLon);
+  float lineLat = 1.0 - smoothstep(0.0, 0.022, dLat);
+  float lineLon = 1.0 - smoothstep(0.0, 0.022, dLon);
+  float grid = max(lineLat, lineLon);
+  float node = (1.0 - smoothstep(0.0, 0.05, dLat)) * (1.0 - smoothstep(0.0, 0.05, dLon));
+  node *= 0.55 + 0.45 * sin(time * 5.0 + lon * 4.0 + lat * 3.0); // data pulse
+  float facing = clamp(dot(n, -rd), 0.0, 1.0);
+  float wrap = smoothstep(0.0, 0.4, facing); // fade lines near the rim so they wrap
+  vec3 netColor = mix(uC3, vec3(1.0), 0.35);
+  col += (grid * 0.28 + max(node, 0.0) * 1.3) * netColor * wrap;
 
   float alpha = smoothstep(0.0, 0.045, disc);
 

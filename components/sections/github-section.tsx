@@ -32,13 +32,13 @@ export default function GithubSection() {
         <div className="mx-auto mb-10 grid max-w-2xl grid-cols-3 gap-4">
           {stats.map((s) => (
             <Reveal key={s.label}>
-              <div className="surface-card rounded-2xl p-5 text-center md:p-6">
-                <div className="font-display text-2xl font-bold md:text-3xl">
+              <div className="surface-card rounded-2xl p-3 text-center xs:p-4 md:p-6">
+                <div className="font-display text-xl font-bold xs:text-2xl md:text-3xl">
                   <span className="text-gradient">
                     <AnimatedCounter value={s.value} suffix={s.suffix} />
                   </span>
                 </div>
-                <div className="mt-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground xs:text-xs">
                   {s.label}
                 </div>
               </div>

@@ -63,8 +63,8 @@ export default function AboutSection() {
             {profile.stats.map((stat) => {
               const { value, suffix } = parseStat(stat.value)
               return (
-                <div key={stat.label} className="bg-surface p-6 text-center md:p-8">
-                  <div className="font-display text-4xl font-bold tracking-tight md:text-5xl">
+                <div key={stat.label} className="bg-surface p-4 text-center sm:p-6 md:p-8">
+                  <div className="font-display text-3xl font-bold tracking-tight xs:text-4xl md:text-5xl">
                     <span className="text-gradient">
                       <AnimatedCounter value={value} suffix={suffix} />
                     </span>

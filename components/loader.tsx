@@ -331,14 +331,14 @@ export default function Loader() {
                     transition={{ duration: 0.7, ease: EASE }}
                     className="flex flex-col items-center"
                   >
-                    <p className="whitespace-pre-line font-display text-3xl font-semibold leading-tight text-white sm:text-5xl">
+                    <p className="whitespace-pre-line font-display text-2xl font-semibold leading-tight text-white xs:text-3xl sm:text-5xl">
                       {STORY[step].text}
                     </p>
                     <motion.code
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.35, duration: 0.4 }}
-                      className="mt-6 inline-flex items-center rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-xs text-grad-3/90 sm:text-sm"
+                      className="mt-6 inline-flex max-w-[90vw] items-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-mono text-[10px] text-grad-3/90 xs:text-xs sm:text-sm"
                     >
                       <span className="mr-2 text-white/30">›</span>
                       {STORY[step].code}
@@ -353,10 +353,10 @@ export default function Loader() {
                     transition={{ duration: 0.9, ease: EASE }}
                     className="flex flex-col items-center"
                   >
-                    <h1 className="font-display text-5xl font-bold tracking-tight sm:text-7xl">
+                    <h1 className="font-display text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
                       <span className="text-gradient-vivid">CHIRAG SAHANI</span>
                     </h1>
-                    <span className="mt-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+                    <span className="mt-4 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50 sm:text-xs sm:tracking-[0.35em]">
                       Software Engineer · AI Engineer
                     </span>
                   </motion.div>

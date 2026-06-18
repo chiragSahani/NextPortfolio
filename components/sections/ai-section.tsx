@@ -80,9 +80,10 @@ function node(id: string) {
 function NetworkDiagram() {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-border bg-surface/60 p-4">
+     <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       <svg
         viewBox="0 0 720 200"
-        className="h-auto w-full"
+        className="h-auto w-full min-w-[560px]"
         role="img"
         aria-label="RAG and agent pipeline diagram"
       >
@@ -165,6 +166,7 @@ function NetworkDiagram() {
           </motion.g>
         ))}
       </svg>
+     </div>
     </div>
   )
 }

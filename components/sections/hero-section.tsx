@@ -54,9 +54,9 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="hero"
-      className="relative flex min-h-[100svh] items-center overflow-hidden px-6 pt-28 pb-20 md:px-12 lg:px-20"
+      className="relative flex min-h-[100svh] items-center overflow-hidden px-5 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20 md:px-12 lg:px-20"
     >
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         {/* ===== Left — content ===== */}
         <motion.div
           variants={container}
@@ -131,7 +131,7 @@ export default function HeroSection() {
         {/* ===== Right — gradient sphere ===== */}
         <motion.div
           style={{ scale: sphereScale, opacity: sphereOpacity, y: sphereY }}
-          className="relative mx-auto aspect-square w-full max-w-[34rem] lg:max-w-none"
+          className="relative mx-auto aspect-square w-full max-w-[17rem] xs:max-w-[20rem] sm:max-w-[26rem] lg:max-w-none"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
