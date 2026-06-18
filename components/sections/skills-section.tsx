@@ -1,111 +1,86 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
 import { skills, skillCategories } from "@/lib/data"
 import { SectionHeader } from "@/components/ui/section-header"
-import { GridScanLite } from "@/components/ui/grid-scan-lite"
 import { SkillIcon } from "@/components/ui/skill-icon"
 import { cn } from "@/lib/utils"
 
-// Single restrained accent glow for every category (no multi-color rainbow)
-const skillGlow = "hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] hover:border-primary/50"
+const filters = [{ key: "all", label: "All" }, ...skillCategories.map((c) => ({ key: c.key, label: c.label }))]
 
 export default function SkillsSection() {
-  const [activeFilter, setActiveFilter] = useState<string>("all")
+  const [active, setActive] = useState<string>("all")
 
-  // Filter skills list
-  const filteredSkills =
-    activeFilter === "all" ? skills : skills.filter((s) => s.category === activeFilter)
+  const visible =
+    active === "all" ? skills : skills.filter((s) => s.category === active)
 
   return (
-    <section id="skills" className="section-padding relative z-10 gradient-bg overflow-hidden">
-      <GridScanLite className="z-0" />
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+    <section id="skills" className="section-padding relative z-10">
+      <div className="mx-auto max-w-6xl px-6 md:px-12">
         <SectionHeader
-          index="04"
-          title="Tech Ecosystem"
-          subtitle="Technologies I use to build scalable, production-grade systems and AI integrations."
-          gradient={true}
+          index="05"
+          title="Technology Ecosystem"
+          subtitle="A connected toolkit spanning frontend, backend, AI, data, and cloud — chosen for performance and scale."
+          gradient
           align="center"
         />
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          <button
-            onClick={() => setActiveFilter("all")}
-            className={cn(
-              "px-4 py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-300 border",
-              activeFilter === "all"
-                ? "bg-primary text-white border-primary shadow-[0_0_12px_rgba(59,130,246,0.4)]"
-                : "glass border-border/40 text-muted-foreground hover:text-foreground hover:border-border"
-            )}
-          >
-            All
-          </button>
-          {skillCategories.map((cat) => (
+        {/* Filters */}
+        <div className="mb-12 flex flex-wrap justify-center gap-2">
+          {filters.map((f) => (
             <button
-              key={cat.key}
-              onClick={() => setActiveFilter(cat.key)}
+              key={f.key}
+              type="button"
+              onClick={() => setActive(f.key)}
               className={cn(
-                "px-4 py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-300 border",
-                activeFilter === cat.key
-                  ? "bg-primary text-white border-primary shadow-[0_0_12px_rgba(59,130,246,0.4)]"
-                  : "glass border-border/40 text-muted-foreground hover:text-foreground hover:border-border"
+                "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                active === f.key
+                  ? "text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
-              {cat.label}
+              {active === f.key && (
+                <motion.span
+                  layoutId="skill-filter"
+                  className="absolute inset-0 -z-10 rounded-full bg-primary"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+              {f.label}
             </button>
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 min-h-[300px]"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill) => {
-              const glowClass = skillGlow
-
-              return (
+        {/* Badge ecosystem */}
+        <LayoutGroup>
+          <motion.div
+            layout
+            className="flex flex-wrap justify-center gap-3"
+          >
+            <AnimatePresence mode="popLayout">
+              {visible.map((skill, i) => (
                 <motion.div
                   key={skill.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.85 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
+                  exit={{ opacity: 0, scale: 0.85 }}
+                  transition={{ duration: 0.32, delay: (i % 12) * 0.015, ease: [0.21, 0.47, 0.32, 0.98] }}
                   whileHover={{ y: -4 }}
-                  className={cn(
-                    "glass rounded-xl p-4 flex flex-col items-center justify-center gap-2.5 border border-border/40",
-                    "transition-all duration-300 text-center h-32 select-none relative group overflow-hidden",
-                    glowClass
-                  )}
+                  className="group flex items-center gap-2.5 rounded-2xl border border-border bg-surface/70 px-3.5 py-2.5 shadow-[0_2px_10px_-6px_hsl(226_57%_20%/0.2)] transition-colors hover:border-primary/30"
                 >
-                  {/* Subtle Background Glow on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                  {/* Brand Icon */}
-                  <SkillIcon
-                    name={skill.name}
-                    className="h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
-                  />
-
-                  {/* Skill Name */}
-                  <span className="font-display text-sm font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
+                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-[hsl(226_40%_11%)]">
+                    <SkillIcon name={skill.name} className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm font-medium text-foreground">
                     {skill.name}
                   </span>
-
-                  {/* Category Label */}
-                  <span className="text-[9px] font-mono font-medium text-muted-foreground uppercase tracking-wider">
-                    {skill.category}
-                  </span>
                 </motion.div>
-              )
-            })}
-          </AnimatePresence>
-        </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </LayoutGroup>
       </div>
     </section>
   )

@@ -9,6 +9,7 @@ import Loader from "@/components/loader"
 import SmoothScroll from "@/components/smooth-scroll"
 import CursorGlow from "@/components/cursor-glow"
 import ScrollProgress from "@/components/scroll-progress"
+import AmbientBackground from "@/components/ambient-background"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://chiragsahani.com"),
   title: "Chirag Sahani — Software Engineer",
   description:
     "Software Engineer building scalable AI-powered digital experiences. Expertise in React, Next.js, TypeScript, and system design. View featured projects, engineering philosophy, and technical achievements.",
@@ -85,6 +87,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <SmoothScroll>
+            <AmbientBackground />
             <Loader />
             <CursorGlow />
             <ScrollProgress />

@@ -58,11 +58,11 @@ export const profile = {
   location: "India",
   email: "chiragsahani093@gmail.com",
   image:
-    "https://res.cloudinary.com/dlyctssmy/image/upload/v1734845393/android-chrome-512x512_oh3h9a.png",
+    "https://res.cloudinary.com/dlyctssmy/image/upload/v1781794593/ChatGPT_Image_Jun_17_2026_10_37_08_AM_yfbde2.png",
   stats: [
     { label: "DSA Problems", value: "600+", description: "Solved across platforms" },
-    { label: "GitHub Repos", value: "80+", description: "Public projects shipped" },
-    { label: "Months at Trao AI", value: "18+", description: "Software Developer role" },
+    { label: "GitHub Repos", value: "85+", description: "Public projects shipped" },
+    { label: "Months at Trao AI", value: "12", description: "Software Developer role" },
     { label: "Tech Stack", value: "30+", description: "Technologies mastered" },
   ],
 }
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       "GitHub Actions",
       "AWS"
     ],
-    image: "/lms.png",
+    image: "/lms.webp",
     category: "featured",
     highlights: [
       "Next.js 14 App Router with middleware-based protected routes",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     demoUrl: "https://edu-reach-1.onrender.com/",
     githubUrl: "https://github.com/chiragSahani/edu-reach",
     image:
-      "/edu.png",
+      "/edu.webp",
     category: "featured",
     highlights: [
       "RAG-powered chatbot using GPT-4o-mini with knowledge base grounding",
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     techStack: ["TypeScript", "Node.js", "IMAP", "RAG", "LLM APIs", "MongoDB", "WebSockets"],
     githubUrl: "https://github.com/chiragSahani/ai-based-inbox-onebox",
     image:
-      "/inbox.png",
+      "/inbox.webp",
     category: "featured",
     highlights: [
       "Real-time IMAP sync across multiple inboxes with WebSocket push updates",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     demoUrl: "https://ats-resume-9807.onrender.com/",
     githubUrl: "https://github.com/chiragSahani/ats-resume",
     image:
-      "/ats.png",
+      "/ats.webp",
     category: "featured",
     highlights: [
       "ATS compatibility score with detailed keyword gap analysis",
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     demoUrl: "https://chiragnexus.netlify.app/",
     githubUrl: "https://github.com/chiragSahani/Nexus.git",
     image:
-      "/Dashboard.png",
+      "/Dashboard.webp",
     category: "featured",
     highlights: [
       "Live WebSocket integration for real-time crypto price streaming",
@@ -215,7 +215,7 @@ export const projects: Project[] = [
     demoUrl: "https://github.com/chiragSahani/resume-formatter",
     githubUrl: "https://github.com/chiragSahani/resume-formatter",
     image:
-      "/formatter.png",
+      "/formatter.webp",
     category: "featured",
     highlights: [
       "AI-driven extraction of structured fields from messy resumes",
@@ -231,7 +231,7 @@ export const projects: Project[] = [
     demoUrl: "https://wedding-anumollife.netlify.app/",
     githubUrl: "https://github.com/chiragSahani/wedding-website",
     image:
-      "/wedding.png",
+      "/wedding.webp",
     category: "featured",
     highlights: [
       "Custom event landing experience with rich animations",
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     demoUrl: "https://chiragtech.ccbp.tech/",
     githubUrl: "https://github.com/chiragSahani/ecommQuadB.git",
     image:
-      "/trendz.png",
+      "/trendz.webp",
     category: "featured",
     highlights: [
       "JWT-based authentication with protected routes",

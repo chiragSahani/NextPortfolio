@@ -88,7 +88,7 @@ export default function Footer() {
             aria-label="Back to top"
           >
             <Image
-              src="/Logo.png"
+              src="/Logo.webp"
               alt="Chirag Sahani"
               width={1536}
               height={1024}
